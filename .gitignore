@@ -1,0 +1,31 @@
+# ============================================================
+#  NovaLife RP — .gitignore
+# ============================================================
+
+# Dépendances open-source (installées via git clone, voir docs/DEPENDENCIES.md)
+# NE PAS versionner leur code (licence + évite les conflits de merge).
+resources/[standalone]/oxmysql/
+resources/[standalone]/ox_lib/
+resources/[standalone]/ox_target/
+resources/[standalone]/ox_inventory/
+resources/[standalone]/illenium-appearance/
+
+# Véhicules add-on (assets .yft/.ytd fournis par le créateur, non redistribuables)
+resources/[vehicles]/*/stream/
+resources/[vehicles]/*/data/
+
+# Fichiers sensibles / config serveur réels
+server.cfg
+server.cfg.example.bak
+*.key
+*.pem
+secrets.cfg
+
+# OS / éditeur
+.DS_Store
+Thumbs.db
+*.swp
+~$*
+
+# Logs locaux
+*.log

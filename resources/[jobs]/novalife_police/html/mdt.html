@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="mdt.css" />
+  <title>NovaLife — MDT Police</title>
+</head>
+<body>
+  <div id="app" class="hidden">
+    <aside>
+      <div class="brand">◈ MDT</div>
+      <nav>
+        <button class="nav active" data-p="home">Accueil</button>
+        <button class="nav" data-p="ident">Identités</button>
+        <button class="nav" data-p="veh">Véhicules</button>
+        <button class="nav" data-p="plate">Plaques</button>
+        <button class="nav" data-p="records">Casier</button>
+        <button class="nav" data-p="warrants">Mandats</button>
+        <button class="nav" data-p="reports">Rapports</button>
+        <button class="nav" data-p="dispatch">Dispatch</button>
+      </nav>
+    </aside>
+    <main>
+      <header><input id="search" placeholder="Rechercher (citizenid / plaque / nom)…" /></header>
+      <section id="page-home" class="page">Bienvenue sur le terminal police NovaLife RP.</section>
+      <section id="page-ident" class="page hidden"></section>
+      <section id="page-veh" class="page hidden"></section>
+      <section id="page-plate" class="page hidden"></section>
+      <section id="page-records" class="page hidden"></section>
+      <section id="page-warrants" class="page hidden"></section>
+      <section id="page-reports" class="page hidden"></section>
+      <section id="page-dispatch" class="page hidden"></section>
+    </main>
+  </div>
+  <script src="mdt.js"></script>
+</body>
+</html>

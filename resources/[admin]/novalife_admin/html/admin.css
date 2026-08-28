@@ -1,0 +1,11 @@
+:root { --primary:#00e5a0; --bg:#0d1117; --panel:#161b22; --text:#e6edf3; --muted:#8b949e; }
+* { box-sizing:border-box; font-family:'Segoe UI',system-ui,sans-serif; }
+body { background:var(--bg); color:var(--text); height:100vh; display:flex; align-items:center; justify-content:center; }
+.hidden { display:none !important; }
+#app { width:min(480px,92vw); }
+.screen { background:var(--panel); border:1px solid #21262d; border-radius:14px; padding:20px; box-shadow:0 20px 60px rgba(0,0,0,.5); }
+header { color:var(--primary); font-weight:800; font-size:20px; margin-bottom:16px; }
+#grid { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin-bottom:14px; }
+.btn { background:#1a222c; border:1px solid #2a313c; color:var(--text); padding:11px; border-radius:8px; cursor:pointer; font-size:14px; text-align:left; }
+.btn:hover { border-color:var(--primary); color:var(--primary); }
+.close { width:100%; background:var(--primary); color:#06241b; border:none; padding:11px; border-radius:8px; font-weight:700; cursor:pointer; }

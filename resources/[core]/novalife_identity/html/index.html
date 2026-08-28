@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaLife RP — Identité</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app" class="hidden">
+    <!-- Écran sélection -->
+    <section id="select-screen" class="screen hidden">
+      <h1>NovaLife RP</h1>
+      <p class="sub">Choisissez un personnage</p>
+      <div id="char-list" class="card-grid"></div>
+      <button id="btn-new" class="btn ghost">+ Nouveau personnage</button>
+    </section>
+
+    <!-- Écran création -->
+    <section id="create-screen" class="screen hidden">
+      <h1>Création du personnage</h1>
+      <div class="form">
+        <label>Prénom <input id="firstname" type="text" maxlength="40" placeholder="Jean" /></label>
+        <label>Nom <input id="lastname" type="text" maxlength="40" placeholder="Dupont" /></label>
+        <label>Date de naissance <input id="dob" type="date" /></label>
+        <label>Sexe
+          <select id="sex"><option value="homme">Homme</option><option value="femme">Femme</option></select>
+        </label>
+        <label>Taille (cm) <input id="height" type="number" min="120" max="220" value="180" /></label>
+        <label>Nationalité <input id="nationality" type="text" value="Française" /></label>
+      </div>
+      <p id="create-error" class="error"></p>
+      <button id="btn-create" class="btn">Valider</button>
+    </section>
+
+    <!-- Carte d'identité -->
+    <section id="id-card" class="screen hidden">
+      <div class="id-card-box">
+        <div class="id-head">CARTE NATIONALE D'IDENTITÉ</div>
+        <div class="id-body" id="id-body"></div>
+      </div>
+      <button id="btn-id-close" class="btn">Fermer</button>
+    </section>
+
+    <!-- Permis -->
+    <section id="lic-screen" class="screen hidden">
+      <h2>Permis de conduire</h2>
+      <div id="lic-list" class="lic-list"></div>
+      <button id="btn-lic-close" class="btn">Fermer</button>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

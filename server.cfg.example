@@ -1,0 +1,110 @@
+# ============================================================
+#  NovaLife RP — server.cfg.example
+#  Copiez ce fichier en server.cfg et remplacez CHANGE_ME.
+#  NE COMMETTEZ JAMAIS VOTRE server.cfg RÉEL (secrets).
+# ============================================================
+
+# ---- Identité serveur ----
+set sv_hostname "NovaLife RP"
+sets sv_projectName "NovaLife RP"
+sets sv_projectDesc "Serveur GTA RP francophone — RP semi-sérieux, orienté automobile"
+sets locale "fr"
+sets tags "roleplay, rp, french, qb, automobile"
+
+# ---- License FiveM (OBLIGATOIRE) ----
+sv_license "CHANGE_ME_FIVEM_LICENSE_KEY"
+
+# ---- OneSync (requis) ----
+set onesync on
+set onesync_population true
+# OneSync Infinity (si votre licence le permet) sinon laissez la ligne suivante commentée
+# set onesync_population true
+
+# ---- Réseau ----
+sv_maxclients 64
+sv_endpoint_add_tcp "0.0.0.0:30120"
+sv_endpoint_add_udp "0.0.0.0:30120"
+sv_master1 ""
+
+# ---- Convars NovaLife ----
+setr sv_enforcegamebuild 2802       # build recommandé (peut être ajusté)
+set NovaLife_ServerName "NovaLife RP"
+set NovaLife_DiscordInvite "CHANGE_ME_DISCORD_INVITE"
+
+# ---- MySQL / MariaDB ----
+set mysql_connection_string "server=127.0.0.1;database=novalife;userid=novalife;password=CHANGE_ME_DB_PASSWORD"
+
+# ---- Webhooks Discord (CÔTÉ SERVEUR, jamais exposés au client) ----
+# Remplacez CHANGE_ME_WEBHOOK par l'URL complète https://discord.com/api/webhooks/...
+set NovaLife_Webhook_Connect "CHANGE_ME_WEBHOOK"
+set NovaLife_Webhook_Money  "CHANGE_ME_WEBHOOK"
+set NovaLife_Webhook_Admin  "CHANGE_ME_WEBHOOK"
+set NovaLife_Webhook_Arrest "CHANGE_ME_WEBHOOK"
+set NovaLife_Webhook_Errors "CHANGE_ME_WEBHOOK"
+set NovaLife_Webhook_Vehicle "CHANGE_ME_WEBHOOK"
+
+# ---- Sécurité ----
+sv_scriptHookAllowed 0
+sv_luaAuth 1
+sv_enableChat 1
+# Anti-Cheat de base
+sv_filterRequestControl 1
+
+# ---- RCON (panneau web type txAdmin recommandé) ----
+rcon_password "CHANGE_ME_RCON_PASSWORD"
+
+# ---- Tokens (optionnels si vous utilisez txAdmin) ----
+# sv_tebexSecret ""
+# sv_licensekey ""
+
+# ---- Steam / auth ----
+# sv_authMaxVariance 5
+# sv_authMinTrust 5
+
+# ============================================================
+#  Démarrage — ressources standalone (dépendances)
+#  Installez-les dans resources/[standalone]/ (voir docs/DEPENDENCIES.md)
+# ============================================================
+exec dependencies.cfg    # optionnel: liste de démarrage des deps
+ensure oxmysql
+ensure ox_lib
+ensure ox_target
+ensure ox_inventory
+ensure illenium-appearance
+
+# ============================================================
+#  Permissions (groupes ACE)
+# ============================================================
+exec permissions.cfg
+
+# ============================================================
+#  Démarrage — NovaLife (ordre important)
+# ============================================================
+ensure novalife_core
+ensure novalife_utils
+ensure novalife_identity
+ensure novalife_spawn
+
+ensure novalife_banking
+ensure novalife_billing
+ensure novalife_business
+
+ensure novalife_garages
+ensure novalife_keys
+ensure novalife_fuel
+
+ensure novalife_police
+ensure novalife_ems
+ensure novalife_fire
+ensure novalife_mechanic
+ensure novalife_taxi
+ensure novalife_cardealer
+
+ensure novalife_admin
+ensure novalife_owner
+ensure novalife_chat
+ensure novalife_phone
+
+# ---- Maps (ajoutez vos mappings tiers ici, licences respectées) ----
+# ensure novalife_map_mrpd
+# ensure novalife_map_pillbox

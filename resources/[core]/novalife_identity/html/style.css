@@ -1,0 +1,48 @@
+/* NovaLife RP — NUI identité
+   Style sombre / moderne / minimaliste. Couleur principale configurable (#00e5a0). */
+:root {
+  --primary: #00e5a0;
+  --bg: #0d1117;
+  --panel: #161b22;
+  --panel-2: #1f2630;
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --danger: #ff5c5c;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
+body { background: radial-gradient(1200px 600px at 50% -10%, #10231d 0%, var(--bg) 60%); color: var(--text); height: 100vh; display: flex; align-items: center; justify-content: center; }
+.hidden { display: none !important; }
+
+#app { width: min(720px, 92vw); }
+.screen { background: var(--panel); border: 1px solid #21262d; border-radius: var(--radius); padding: 28px; box-shadow: 0 20px 60px rgba(0,0,0,.5); }
+h1 { color: var(--primary); font-size: 30px; letter-spacing: .5px; }
+h2 { color: var(--primary); margin-bottom: 14px; }
+.sub { color: var(--muted); margin: 6px 0 18px; }
+
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap: 12px; margin-bottom: 16px; }
+.char-card { background: var(--panel-2); border: 1px solid #21262d; border-radius: 10px; padding: 14px; cursor: pointer; transition: .15s; }
+.char-card:hover { border-color: var(--primary); transform: translateY(-2px); }
+.char-card .name { font-weight: 600; }
+.char-card .meta { color: var(--muted); font-size: 13px; margin-top: 4px; }
+
+.btn { background: var(--primary); color: #06241b; border: none; padding: 12px 18px; border-radius: 10px; font-weight: 700; cursor: pointer; font-size: 15px; }
+.btn:hover { filter: brightness(1.08); }
+.btn.ghost { background: transparent; color: var(--primary); border: 1px solid var(--primary); margin-top: 8px; }
+
+.form { display: grid; gap: 12px; }
+.form label { display: flex; flex-direction: column; gap: 6px; color: var(--muted); font-size: 13px; }
+.form input, .form select { background: var(--panel-2); border: 1px solid #2a313c; color: var(--text); padding: 11px; border-radius: 8px; font-size: 15px; }
+.form input:focus, .form select:focus { outline: none; border-color: var(--primary); }
+.error { color: var(--danger); margin: 10px 0; min-height: 18px; }
+
+.id-card-box { background: linear-gradient(135deg, #0f3d33, #11261f); border: 1px solid var(--primary); border-radius: 12px; padding: 18px; margin-bottom: 16px; }
+.id-head { color: var(--primary); font-size: 12px; letter-spacing: 2px; margin-bottom: 12px; }
+.id-body { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 18px; font-size: 15px; }
+.id-body b { color: var(--muted); font-weight: 500; }
+
+.lic-list { display: grid; gap: 10px; margin-bottom: 16px; }
+.lic-item { display: flex; justify-content: space-between; background: var(--panel-2); padding: 12px; border-radius: 8px; }
+.lic-item .ok { color: var(--primary); font-weight: 700; }
+.lic-item .no { color: var(--danger); font-weight: 700; }

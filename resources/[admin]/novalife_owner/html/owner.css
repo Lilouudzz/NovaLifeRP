@@ -1,0 +1,25 @@
+:root { --primary:#00e5a0; --bg:#0a0e13; --panel:#11171f; --panel2:#1a222c; --text:#e6edf3; --muted:#8b949e; --danger:#ff5c5c; --radius:12px; }
+* { box-sizing:border-box; font-family:'Segoe UI',system-ui,sans-serif; }
+body { background:var(--bg); color:var(--text); height:100vh; margin:0; display:flex; align-items:center; justify-content:center; }
+.hidden { display:none !important; }
+#app { width:min(1100px,96vw); height:min(720px,94vh); }
+.panel { display:flex; width:100%; height:100%; background:var(--panel); border:1px solid #21262d; border-radius:16px; overflow:hidden; box-shadow:0 30px 80px rgba(0,0,0,.6); }
+.side { width:230px; background:#0d131a; border-right:1px solid #1c2530; padding:14px; display:flex; flex-direction:column; }
+.brand { color:var(--primary); font-weight:800; font-size:18px; margin-bottom:14px; }
+.side nav { flex:1; overflow:auto; }
+.side nav button { display:block; width:100%; text-align:left; background:none; border:none; color:var(--muted); padding:10px; border-radius:8px; cursor:pointer; margin-bottom:3px; font-size:14px; }
+.side nav button:hover, .side nav button.active { color:var(--primary); background:var(--panel2); }
+.close { background:var(--danger); color:#fff; border:none; padding:10px; border-radius:8px; cursor:pointer; font-weight:700; }
+main { flex:1; padding:18px; overflow:auto; }
+h2 { color:var(--primary); margin-top:0; }
+.page table { width:100%; border-collapse:collapse; font-size:13px; }
+.page th, .page td { text-align:left; padding:8px; border-bottom:1px solid #1c2530; }
+.page th { color:var(--muted); font-weight:500; }
+.btn { background:var(--primary); color:#06241b; border:none; padding:9px 13px; border-radius:8px; font-weight:700; cursor:pointer; font-size:13px; }
+.btn:hover { filter:brightness(1.08); }
+.actions { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+.form-inline { display:flex; gap:8px; margin-bottom:12px; flex-wrap:wrap; }
+.form-inline input, .form-inline select { background:var(--panel2); border:1px solid #2a313c; color:var(--text); padding:9px; border-radius:8px; }
+.hint { color:var(--muted); font-size:12px; }
+#pos-result { background:#0d131a; padding:10px; border-radius:8px; color:var(--primary); }
+#logs-list .log { background:var(--panel2); padding:8px; border-radius:6px; margin-bottom:6px; font-size:12px; }

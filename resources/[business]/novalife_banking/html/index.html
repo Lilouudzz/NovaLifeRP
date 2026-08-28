@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="style.css" />
+  <title>NovaLife Bank</title>
+</head>
+<body>
+  <div id="app" class="hidden">
+    <div class="screen">
+      <header><span class="logo">◈ NovaLife Bank</span><button class="x" id="close">✕</button></header>
+      <div class="balances">
+        <div class="bal"><span class="lbl">Compte</span><b id="bank">0$</b></div>
+        <div class="bal"><span class="lbl">Espèces</span><b id="cash">0$</b></div>
+      </div>
+      <div class="actions">
+        <input id="amount" type="number" min="1" placeholder="Montant" />
+        <div class="row">
+          <button class="btn" id="deposit">Dépôt</button>
+          <button class="btn" id="withdraw">Retrait</button>
+        </div>
+        <div class="row">
+          <input id="target" type="text" placeholder="ID / nom destinataire" />
+          <button class="btn ghost" id="transfer">Virement</button>
+        </div>
+      </div>
+      <div class="tabs">
+        <button class="tab active" data-t="bills">Factures</button>
+        <button class="tab" data-t="hist">Historique</button>
+      </div>
+      <div id="bills" class="list"></div>
+      <div id="hist" class="list hidden"></div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

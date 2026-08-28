@@ -1,0 +1,25 @@
+:root { --primary:#00e5a0; --bg:#0d1117; --panel:#161b22; --text:#e6edf3; --muted:#8b949e; --danger:#ff5c5c; --radius:14px; }
+* { box-sizing:border-box; font-family:'Segoe UI',system-ui,sans-serif; }
+body { background:var(--bg); color:var(--text); height:100vh; display:flex; align-items:center; justify-content:center; }
+.hidden { display:none !important; }
+#app { width:min(460px,92vw); }
+.screen { background:var(--panel); border:1px solid #21262d; border-radius:var(--radius); padding:20px; box-shadow:0 20px 60px rgba(0,0,0,.5); }
+header { display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; }
+.logo { color:var(--primary); font-weight:800; font-size:18px; letter-spacing:.5px; }
+.x { background:none; border:none; color:var(--muted); font-size:18px; cursor:pointer; }
+.balances { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:16px; }
+.bal { background:#1f2630; border-radius:10px; padding:14px; }
+.bal .lbl { color:var(--muted); font-size:12px; display:block; }
+.bal b { font-size:22px; }
+.actions input { width:100%; background:#1f2630; border:1px solid #2a313c; color:var(--text); padding:11px; border-radius:8px; margin-bottom:8px; }
+.row { display:flex; gap:8px; margin-bottom:8px; }
+.row input { flex:1; margin-bottom:0; }
+.btn { flex:1; background:var(--primary); color:#06241b; border:none; padding:11px; border-radius:8px; font-weight:700; cursor:pointer; }
+.btn.ghost { background:transparent; color:var(--primary); border:1px solid var(--primary); }
+.tabs { display:flex; gap:8px; margin:12px 0; }
+.tab { background:#1f2630; border:none; color:var(--muted); padding:8px 14px; border-radius:8px; cursor:pointer; }
+.tab.active { color:var(--primary); }
+.list { display:grid; gap:8px; max-height:240px; overflow:auto; }
+.item { background:#1f2630; border-radius:8px; padding:10px; display:flex; justify-content:space-between; align-items:center; }
+.item .meta { color:var(--muted); font-size:12px; }
+.item button { background:var(--primary); border:none; color:#06241b; padding:6px 10px; border-radius:6px; cursor:pointer; font-weight:700; }

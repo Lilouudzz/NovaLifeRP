@@ -1,0 +1,59 @@
+/* ============================================================
+   NovaLife RP — thème NUI partagé (novalife_theme.css)
+   Copiez/importez ce fichier dans chaque ressource NUI pour
+   une identité visuelle cohérente: sombre, moderne, minimaliste.
+   Couleur principale configurable via --primary.
+   ============================================================ */
+
+:root {
+    --primary: #00e5a0;          /* couleur principale NovaLife (modifiable) */
+    --primary-2: #00b386;
+    --bg: #0d1117;
+    --panel: #161b22;
+    --panel-2: #1f2630;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --danger: #ff5c5c;
+    --success: #3fb950;
+    --warning: #d29922;
+    --radius: 14px;
+    --shadow: 0 20px 60px rgba(0,0,0,.5);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
+
+body {
+    background: radial-gradient(1200px 600px at 50% -10%, #10231d 0%, var(--bg) 60%);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+.nl-screen {
+    background: var(--panel);
+    border: 1px solid #21262d;
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+}
+
+.nl-title { color: var(--primary); font-weight: 800; letter-spacing: .5px; }
+.nl-sub { color: var(--muted); }
+
+.nl-btn {
+    background: var(--primary); color: #06241b; border: none;
+    padding: 11px 16px; border-radius: 10px; font-weight: 700; cursor: pointer; font-size: 15px;
+}
+.nl-btn:hover { filter: brightness(1.08); }
+.nl-btn.ghost { background: transparent; color: var(--primary); border: 1px solid var(--primary); }
+
+.nl-input {
+    background: var(--panel-2); border: 1px solid #2a313c; color: var(--text);
+    padding: 11px; border-radius: 8px; font-size: 15px; width: 100%;
+}
+.nl-input:focus { outline: none; border-color: var(--primary); }
+
+.nl-card { background: var(--panel-2); border-radius: 10px; padding: 14px; }
+.nl-card b { color: var(--primary); }
+
+.nl-error { color: var(--danger); }
+.nl-success { color: var(--success); }

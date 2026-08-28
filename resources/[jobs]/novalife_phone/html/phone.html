@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" /><link rel="stylesheet" href="phone.css" />
+  <title>NovaLife Phone</title>
+</head>
+<body>
+  <div id="phone" class="hidden">
+    <div class="screen">
+      <div class="status"><span id="clock"></span></div>
+      <nav class="apps">
+        <button data-a="home">⌂</button>
+        <button data-a="contacts">☎</button>
+        <button data-a="sms">✉</button>
+        <button data-a="bank">$</button>
+        <button data-a="gps">⚲</button>
+        <button data-a="ads">📰</button>
+        <button data-a="emerg">🚨</button>
+      </nav>
+      <div id="view-home" class="view">NovaLife Phone</div>
+      <div id="view-contacts" class="view hidden"></div>
+      <div id="view-sms" class="view hidden"></div>
+      <div id="view-bank" class="view hidden"></div>
+      <div id="view-gps" class="view hidden"></div>
+      <div id="view-ads" class="view hidden"></div>
+      <div id="view-emerg" class="view hidden"></div>
+    </div>
+  </div>
+  <script src="phone.js"></script>
+</body>
+</html>

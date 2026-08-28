@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaLife — Owner Panel</title>
+  <link rel="stylesheet" href="owner.css" />
+</head>
+<body>
+  <div id="app" class="hidden">
+    <div class="panel">
+      <aside class="side">
+        <div class="brand">👑 OWNER PANEL</div>
+        <nav id="nav">
+          <button data-p="players" class="active">👥 Joueurs</button>
+          <button data-p="money">💰 Argent</button>
+          <button data-p="inventory">🎒 Inventaire</button>
+          <button data-p="jobs">💼 Jobs</button>
+          <button data-p="vehicles">🚗 Véhicules</button>
+          <button data-p="properties">🏠 Propriétés</button>
+          <button data-p="business">🏢 Entreprises</button>
+          <button data-p="tp">📍 Téléportation</button>
+          <button data-p="sanctions">⛔ Sanctions</button>
+          <button data-p="positions">📌 Positions</button>
+          <button data-p="config">⚙️ Configuration</button>
+          <button data-p="logs">📜 Logs</button>
+        </nav>
+        <button id="close" class="close">Fermer</button>
+      </aside>
+      <main id="main">
+        <!-- Joueurs -->
+        <section class="page" id="page-players">
+          <h2>Joueurs connectés</h2>
+          <table id="players-table"><thead><tr><th>ID</th><th>Nom</th><th>Citizen</th><th>Job</th><th>Grade</th><th>Cash</th><th>Banque</th><th>Actions</th></tr></thead><tbody></tbody></table>
+        </section>
+        <!-- Argent -->
+        <section class="page hidden" id="page-money">
+          <h2>Gestion argent</h2>
+          <div class="form-inline"><input id="m-target" placeholder="ID cible"><select id="m-action"><option value="give_cash">Donner cash</option><option value="take_cash">Retirer cash</option><option value="give_bank">Donner banque</option><option value="take_bank">Retirer banque</option><option value="set_cash">Définir cash</option><option value="set_bank">Définir banque</option></select><input id="m-amount" type="number" placeholder="Montant"><button class="btn" id="m-go">Valider</button></div>
+        </section>
+        <!-- Inventaire -->
+        <section class="page hidden" id="page-inventory">
+          <h2>Gestion inventaire</h2>
+          <div class="form-inline"><input id="i-target" placeholder="ID cible"><input id="i-item" placeholder="Item (ex: water)"><input id="i-count" type="number" placeholder="Qte"><select id="i-action"><option value="give">Donner</option><option value="remove">Retirer</option><option value="set">Définir qte</option></select><button class="btn" id="i-go">Valider</button></div>
+          <p class="hint">L'item est vérifié côté serveur (doit exister dans ox_inventory).</p>
+        </section>
+        <!-- Jobs -->
+        <section class="page hidden" id="page-jobs">
+          <h2>Gestion jobs</h2>
+          <div class="form-inline"><input id="j-target" placeholder="ID cible"><select id="j-job"></select><input id="j-grade" type="number" placeholder="Grade" value="0"><select id="j-action"><option value="set">Définir</option><option value="promote">Promouvoir</option><option value="demote">Rétrograder</option><option value="remove">Retirer métier</option></select><button class="btn" id="j-go">Valider</button></div>
+        </section>
+        <!-- Véhicules -->
+        <section class="page hidden" id="page-vehicles">
+          <h2>Gestion véhicules</h2>
+          <div class="actions"><button class="btn" data-va="spawn">Faire apparaître (modèle)</button><button class="btn" data-va="repair">Réparer</button><button class="btn" data-va="clean">Laver</button><button class="btn" data-va="fuel">Carburant</button><button class="btn" data-va="lock">Verrouiller</button><button class="btn" data-va="unlock">Déverrouiller</button><button class="btn" data-va="delete">Supprimer</button></div>
+          <div class="form-inline"><input id="v-target" placeholder="ID (attribuer)"><input id="v-plate" placeholder="Plaque"><input id="v-newplate" placeholder="Nouvelle plaque"><button class="btn" id="v-give">Donner à joueur</button><button class="btn" id="v-plate">Changer plaque</button></div>
+        </section>
+        <!-- Propriétés -->
+        <section class="page hidden" id="page-properties">
+          <h2>Propriétés</h2>
+          <button class="btn" id="p-create">➕ Créer une propriété (mode jeu)</button>
+          <table id="prop-table"><thead><tr><th>ID</th><th>Nom</th><th>Prix</th><th>Propriétaire</th><th>Actions</th></tr></thead><tbody></tbody></table>
+          <div id="prop-keys" class="hidden"><h3>Clés</h3><div id="prop-keys-list"></div><input id="pk-cid" placeholder="citizenid"><button class="btn" id="pk-add">Donner clé</button></div>
+        </section>
+        <!-- Entreprises -->
+        <section class="page hidden" id="page-business">
+          <h2>Entreprises</h2>
+          <div class="form-inline"><input id="b-name" placeholder="Nom"><input id="b-label" placeholder="Label"><select id="b-action"><option value="create">Créer</option><option value="delete">Supprimer</option><option value="setowner">Définir patron</option><option value="balance">Compte</option></select><input id="b-cid" placeholder="citizenid / montant"><button class="btn" id="b-go">Valider</button></div>
+        </section>
+        <!-- Téléportation -->
+        <section class="page hidden" id="page-tp">
+          <h2>Téléportation</h2>
+          <div class="form-inline"><input id="tp-target" placeholder="ID cible"><button class="btn" id="tp-to">Vers joueur</button><button class="btn" id="tp-bring">Ramener joueur</button></div>
+          <div class="form-inline"><input id="tp-x" placeholder="X"><input id="tp-y" placeholder="Y"><input id="tp-z" placeholder="Z"><button class="btn" id="tp-coords">TP coordonnées</button></div>
+          <button class="btn" id="tp-spectate">Spectate (ID)</button>
+        </section>
+        <!-- Sanctions -->
+        <section class="page hidden" id="page-sanctions">
+          <h2>Sanctions</h2>
+          <div class="form-inline"><input id="s-target" placeholder="ID cible"><input id="s-reason" placeholder="Raison"><select id="s-action"><option value="kick">Kick</option><option value="ban">Ban</option><option value="unban">Unban (license)</option><option value="freeze">Freeze</option><option value="unfreeze">Unfreeze</option><option value="revive">Revive</option><option value="heal">Heal</option></select><button class="btn" id="s-go">Valider</button></div>
+        </section>
+        <!-- Positions -->
+        <section class="page hidden" id="page-positions">
+          <h2>Mode création de positions</h2>
+          <p class="hint">Cliquez, allez en jeu à la position voulue, puis tapez <b>/ownerpos</b> pour valider.</p>
+          <div class="actions"><button class="btn pos" data-kind="garage">🅒 Créer garage</button><button class="btn pos" data-kind="property">🅒 Créer propriété</button><button class="btn pos" data-kind="stash">🅒 Créer coffre</button><button class="btn pos" data-kind="wardrobe">🅒 Créer vestiaire</button><button class="btn pos" data-kind="armory">🅒 Créer armurerie</button><button class="btn pos" data-kind="dealer">🅒 Créer concession</button><button class="btn pos" data-kind="business">🅒 Créer entreprise</button><button class="btn pos" data-kind="service">🅒 Créer point de service</button></div>
+          <pre id="pos-result"></pre>
+        </section>
+        <!-- Config -->
+        <section class="page hidden" id="page-config">
+          <h2>Configuration en jeu</h2>
+          <div class="form-inline"><input id="cj-name" placeholder="Job"><input id="cj-grade" type="number" placeholder="Grade"><input id="cj-pay" type="number" placeholder="Salaire"><button class="btn" id="cj-go">Salaire job</button></div>
+          <div class="form-inline"><input id="cv-model" placeholder="Modèle véhicule"><input id="cv-price" type="number" placeholder="Prix"><button class="btn" id="cv-go">Prix véhicule</button></div>
+          <div class="form-inline"><input id="ce-cash" type="number" placeholder="Cash départ"><input id="ce-bank" type="number" placeholder="Banque départ"><button class="btn" id="ce-go">Éco départ</button></div>
+          <div class="form-inline"><select id="cf-type"><option value="essence">Essence</option><option value="diesel">Diesel</option><option value="electrique">Électrique</option></select><input id="cf-price" type="number" step="0.01" placeholder="Prix/L"><button class="btn" id="cf-go">Prix carburant</button></div>
+        </section>
+        <!-- Logs -->
+        <section class="page hidden" id="page-logs">
+          <h2>Logs Owner</h2>
+          <div id="logs-list"></div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="owner.js"></script>
+</body>
+</html>
