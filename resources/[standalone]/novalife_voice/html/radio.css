@@ -1,0 +1,9 @@
+:root { --primary:#00e5a0; --bg:#0d1117; --panel:#161b22; --text:#e6edf3; }
+* { box-sizing:border-box; font-family:'Segoe UI',system-ui,sans-serif; }
+body { background:transparent; }
+.hidden { display:none; }
+#radio { position:fixed; bottom:18px; right:18px; background:var(--panel); color:var(--text); padding:12px; border-radius:12px; border:1px solid #21262d; display:flex; gap:8px; align-items:center; }
+.freq { font-size:22px; font-weight:800; color:var(--primary); min-width:60px; text-align:center; }
+.status { font-size:12px; color:#8b949e; }
+#radio button { background:var(--primary); color:#06241b; border:none; padding:6px 10px; border-radius:8px; font-weight:700; cursor:pointer; }
+#channel { width:60px; background:var(--panel); border:1px solid #2a313c; color:var(--text); padding:6px; border-radius:8px; }

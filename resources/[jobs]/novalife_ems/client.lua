@@ -4,6 +4,11 @@
 
 local onDuty = false
 
+RegisterNetEvent('novalife_ems:client:setDuty', function(d)
+    onDuty = d
+    TriggerEvent('novalife_ems:client:dutyChanged', d)
+end)
+
 CreateThread(function()
     while not Locations do Wait(500) end
     for _, h in ipairs(Locations.hospitals or {}) do

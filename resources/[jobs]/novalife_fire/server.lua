@@ -8,6 +8,7 @@ RegisterNetEvent('novalife_fire:toggleDuty', function()
     local p = exports.novalife_core:GetPlayer(src)
     p.job.onDuty = not p.job.onDuty
     TriggerClientEvent('novalife_core:client:updateJob', src, p.job)
+    TriggerClientEvent('novalife_fire:client:setDuty', src, p.job.onDuty)
     NLNotify(src, 'inform', 'Pompiers', p.job.onDuty and 'Prise de service.' or 'Fin de service.')
 end)
 

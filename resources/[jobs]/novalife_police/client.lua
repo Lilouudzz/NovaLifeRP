@@ -49,7 +49,10 @@ function openArmory()
     TriggerServerEvent('novalife_police:giveWeapon')
 end
 
-RegisterNetEvent('novalife_police:client:setDuty', function(d) onDuty = d end)
+RegisterNetEvent('novalife_police:client:setDuty', function(d)
+    onDuty = d
+    TriggerEvent('novalife_police:client:dutyChanged', d)
+end)
 
 -- Interactions sur un joueur via ox_target (quand proche)
 CreateThread(function()

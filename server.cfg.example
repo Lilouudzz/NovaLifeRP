@@ -71,6 +71,8 @@ ensure ox_lib
 ensure ox_target
 ensure ox_inventory
 ensure illenium-appearance
+ensure pma-voice
+ensure novalife_voice
 
 # ============================================================
 #  Permissions (groupes ACE)

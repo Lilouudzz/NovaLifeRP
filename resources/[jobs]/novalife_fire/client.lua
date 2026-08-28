@@ -5,6 +5,11 @@
 
 local onDuty = false
 
+RegisterNetEvent('novalife_fire:client:setDuty', function(d)
+    onDuty = d
+    TriggerEvent('novalife_fire:client:dutyChanged', d)
+end)
+
 CreateThread(function()
     while not Locations do Wait(500) end
     for _, st in ipairs(Locations.fireStations or {}) do

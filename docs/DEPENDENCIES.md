@@ -52,7 +52,19 @@ on les installe via `git clone` ou le `.zip` officiel dans `resources/[standalon
   (champ `identities.appearance`) et ré-appliquée au spawn/reconnexion.
   Si la ressource n'est pas installée, le serveur tourne sans personnalisation
   (pcall de sécurité côté client).
-- ⚠️ Utiliser une **release** stable, pas la branche `main` (recommandation officielle).
+## 7. pma-voice (voix mumble)
+- GitHub : https://github.com/AvarianKnight/pma-voice
+- Licence : MIT
+- Rôle : wrapper de la voix mumble intégrée FiveM (proximité 3D, radio, appels, submix).
+  `resvoice` (compatible mumble) peut remplacer pma-voice — le bridge `novalife_voice`
+  le détecte au runtime.
+- Install : `git clone https://github.com/AvarianKnight/pma-voice resources/[standalone]/pma-voice`
+  puis `ensure pma-voice`.
+- Intégration : `novalife_voice` (bridge) attribue les canaux radio par métier,
+  gère mégaphone (Police) et appels téléphone. API réelle utilisée :
+  `exports['pma-voice']:setRadioChannel(int)` / `setCallChannel(int)`.
+- ⚠️ La voix mumble nécessite que le serveur FiveM soit en mode **voix activée**
+  (par défaut). Aucune clé API requise.
 - Fourni avec FXServer. Recommandé pour le panneau web / RCON / planification.
 - Licence : inclus dans FXServer.
 
