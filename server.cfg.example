@@ -85,6 +85,10 @@ ensure novalife_utils
 ensure novalife_identity
 ensure novalife_spawn
 
+# ---- Mappings (LSPD + Pillbox) — obligatoires pour les spawn Police/EMS ----
+ensure novalife_map_lspd
+ensure novalife_map_pillbox
+
 ensure novalife_banking
 ensure novalife_billing
 ensure novalife_business
@@ -105,6 +109,4 @@ ensure novalife_owner
 ensure novalife_chat
 ensure novalife_phone
 
-# ---- Maps (ajoutez vos mappings tiers ici, licences respectées) ----
-# ensure novalife_map_mrpd
-# ensure novalife_map_pillbox
+# ---- Fin des ressources NovaLife ----
